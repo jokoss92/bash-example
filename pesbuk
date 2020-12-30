@@ -3,7 +3,7 @@ server {
         root /var/www/html;
         # Add index.php to the list if you are using PHP
         index index.php index.html index.htm index.nginx-debian.html;
-        server_name 192.168.43.190;
+        server_name localhost;
         #bisa diganti dengan ip address localhostmu atau ip servermu, nanti kalau sudah ada domain diganti nama domainmu. 
         location / {
 		index index.php index.html index.htm index.nginx-debian.html;
