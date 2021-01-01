@@ -10,6 +10,7 @@ then
  echo "Install webserver"
  sudo apt-get install mysql-server -y
  echo "Setting db"
+ sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo mysql -u root << EOF
 CREATE DATABASE IF NOT EXISTS dbsosmed;
 CREATE USER IF NOT EXISTS 'devopscilsy'@'%' IDENTIFIED BY '1234567890';
