@@ -10,11 +10,11 @@ then
  echo "Install webserver" 
  sudo apt-get install nginx php-fpm unzip wget php-mysqli -y
  echo "Delete default html"
- sudo rm -rf /var/www/html/*
+ sudo rm -rf /var/www/html/* && sudo rm -rf /var/www/html/.[!.]*
  echo "Download web data"
  cd /var/www/html/ && sudo git clone https://github.com/jokoss92/sosial-media.git && 
  sudo mv sosial-media/* /var/www/html/ && sudo mv sosial-media/.[!.]* /var/www/html/
- sudo sed -i 's/$db_host = "localhost";/$db_host = "172.31.16.217";/g' /var/www/html/config.php 
+ sudo sed -i 's/$db_host = "localhost";/$db_host = "172.31.38.113";/g' /var/www/html/config.php 
  echo "Set git workflow"
  sudo git remote add upstream https://github.com/sdcilsy/sosial-media.git && sudo git fetch upstream && 
  sudo git rebase upstream/master && sudo git pull origin master  
@@ -31,5 +31,5 @@ then
 #exit 0
 else
  echo "Setup dibatalkan"
- exit 1
+#exit 1
 fi
